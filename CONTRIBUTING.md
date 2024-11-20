@@ -1,4 +1,4 @@
-# Contributing to Encre
+# Contributing to Flip
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
@@ -27,9 +27,9 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 
 In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
 
-## Report bugs using Github's [issues](https://github.com/VictorS67/encre/issues)
+## Report bugs using Github's [issues](https://github.com/VictorS67/flip/issues)
 
-We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/VictorS67/roast_project/issues/new); it's that easy!
+We use GitHub issues to track public bugs. Report a bug by [opening a new issue](https://github.com/VictorS67/flip/issues/new); it's that easy!
 
 ## Write bug reports with detail, background, and sample code
 
@@ -60,13 +60,13 @@ People _love_ thorough bug reports. I'm not even kidding.
 1. Clone the repository to your local machine, for example using SSH:
 
 ```bash
-git clone git@github.com:VictorS67/roast_project.git
+git clone git@github.com:VictorS67/flip.git
 ```
 
 or using HTTPS:
 
 ```bash
-git clone https://github.com/VictorS67/roast_project.git
+git clone https://github.com/VictorS67/flip.git
 ```
 
 2. `cd` into your the cloned folder and run the following command:

@@ -75,30 +75,27 @@ if (process.env.NODE_ENV === "test") {
 
 const finalConfig: Config = {
   ...config,
-  port:
-    strToNum(process.env.ENCRE_PORT) ||
-    strToNum(process.env.PORT) ||
-    config.port,
-  hostname: process.env.ENCRE_HOSTNAME || config.hostname,
-  webRoot: process.env.ENCRE_WEB_ROOT || config.webRoot,
+  port: strToNum(process.env.PORT) || config.port,
+  hostname: process.env.HOSTNAME || config.hostname,
+  webRoot: process.env.WEB_ROOT || config.webRoot,
   https:
-    process.env.ENCRE_HTTPS_KEY && process.env.ENCRE_HTTPS_CERT
+    process.env.HTTPS_KEY && process.env.HTTPS_CERT
       ? {
-          key: process.env.ENCRE_HTTPS_KEY.replace(/\\n/g, "\n"),
-          cert: process.env.ENCRE_HTTPS_CERT.replace(/\\n/g, "\n"),
+          key: process.env.HTTPS_KEY.replace(/\\n/g, "\n"),
+          cert: process.env.HTTPS_CERT.replace(/\\n/g, "\n"),
           ...(config.https || {}),
         }
       : config.https,
   upload:
-    process.env.ENCRE_UPLOAD_FILE_SYNC_SIZE_LIMIT_MB ||
-    process.env.ENCRE_UPLOAD_FILE_SIZE_LIMIT_MB
+    process.env.UPLOAD_FILE_SYNC_SIZE_LIMIT_MB ||
+    process.env.UPLOAD_FILE_SIZE_LIMIT_MB
       ? {
           fileSizeSyncLimitMB:
-            strToNum(process.env.ACTUAL_UPLOAD_FILE_SYNC_SIZE_LIMIT_MB) ||
-            strToNum(process.env.ACTUAL_UPLOAD_FILE_SIZE_LIMIT_MB) ||
+            strToNum(process.env.UPLOAD_FILE_SYNC_SIZE_LIMIT_MB) ||
+            strToNum(process.env.UPLOAD_FILE_SIZE_LIMIT_MB) ||
             config.upload!.fileSizeSyncLimitMB,
           fileSizeLimitMB:
-            strToNum(process.env.ACTUAL_UPLOAD_FILE_SIZE_LIMIT_MB) ||
+            strToNum(process.env.UPLOAD_FILE_SYNC_SIZE_LIMIT_MB) ||
             config.upload!.fileSizeLimitMB,
         }
       : config.upload,
