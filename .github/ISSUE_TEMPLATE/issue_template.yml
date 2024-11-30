@@ -23,11 +23,11 @@ body:
       label: What was the expected behavior?
       description: Also tell us, what did you expected to happen?
       placeholder: Tell us what you expected!
-      value: "Encre did not work as expected!"
+      value: "Flip did not work as expected!"
     validations:
       required: true
   - type: textarea
-    id: environment 
+    id: environment
     attributes:
       label: Describe your environment
       description: Which OS, node version, etc. are you using?
@@ -50,7 +50,7 @@ body:
     id: terms
     attributes:
       label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/VictorS67/roast_project/CODE_OF_CONDUCT.md)
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://github.com/VictorS67/flip/CODE_OF_CONDUCT.md)
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true

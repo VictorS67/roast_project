@@ -5,7 +5,7 @@ import express from "express";
 import rateLimit from "express-rate-limit";
 
 import config from "./config.js";
-import encreAPIRouter from "./routes/index.js";
+import APIRouter from "./routes/index.js";
 import errorMiddleware from "./middlewares/error.js";
 
 export class App {
@@ -52,7 +52,7 @@ export class App {
       res.sendFile(config.webRoot + "/index.html")
     );
 
-    this.app.use("/api/v1", encreAPIRouter);
+    this.app.use("/api/v1", APIRouter);
 
     this.app.use(errorMiddleware);
   }
