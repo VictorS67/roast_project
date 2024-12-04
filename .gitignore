@@ -133,3 +133,6 @@ dist
 .env
 .yarnrc
 .yarn/**/*
+
+.DS_Store
+**/*/.DS_Store
