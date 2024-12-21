@@ -14,5 +14,15 @@ App<IAppOption>({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
       },
     })
+
+    if (!wx.cloud) {
+      console.error('Please use wechat base library 2.2.3 or above to use cloud capability')
+    } else {
+      wx.cloud.init({
+        env: 'flip-test-env-4gice6ydb47357cc', // Replace with your actual env ID, or use cloud.DYNAMIC_CURRENT_ENV
+        traceUser: true,
+      })
+      console.log('cloud is init')
+    }
   },
 })
