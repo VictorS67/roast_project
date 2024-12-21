@@ -2,6 +2,6 @@
   "description": "projectConfig in private",
   "projectname": "app",
   "setting": {
-    "compileHotReLoad": true
+    "compileHotReLoad": false
   }
 }

@@ -50,5 +50,45 @@ Component({
         }
       })
     },
+    onLoad() {
+      this.callExpressFunction();
+    },
+    callExpressFunction() {
+      // Here we call the cloud function as if it was an HTTP endpoint.
+      // The event object sent to the function simulates an HTTP request.
+  
+      wx.cloud.callFunction({
+        name: 'testFunc', // The name of your deployed cloud function
+        data: {
+          // Simulate an incoming request. Adjust the shape as per your function code.
+          path: '/hello',
+          httpMethod: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          queryStringParameters: { foo: 'bar' },
+          body: '' // For GET requests, usually no body is needed.
+        }
+      }).then(res => {
+        console.log('Cloud function response:', res);
+        // The structure of res.result depends on how the cloud function constructs it.
+        // Based on the previous code, it should return something like:
+        // { statusCode: 200, headers: {}, body: '{"message": "Hello...", "wxContext": {...}}' }
+  
+        let responseData = {};
+        try {
+          responseData = JSON.parse(res.result.body);
+        } catch (e) {
+          // If not JSON, just show raw data
+          responseData = res.result.body;
+        }
+  
+        this.setData({
+          response: JSON.stringify(responseData, null, 2),
+        })
+      }).catch(err => {
+        console.error('Cloud function call failed', err)
+      });
+    },
   },
 })

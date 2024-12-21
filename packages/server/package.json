@@ -9,6 +9,7 @@
   "dependencies": {
     "@encrejs/api": "^0.0.3",
     "axios": "1.7.4",
+    "cookie": "^1.0.2",
     "cors": "^2.8.5",
     "express": "4.19.2",
     "express-actuator": "1.8.4",
